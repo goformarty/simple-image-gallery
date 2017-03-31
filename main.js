@@ -6,9 +6,24 @@ var overlay = document.querySelector('.overlay');
 
 /* Looping through images */
 
-  var newImage = document.createElement('img');
-  newImage.setAttribute('src', xxx);
-  thumbBar.appendChild(newImage);
+for (var i = 1; i<=5; i++) {
+	var newImage = document.createElement('img');
+	newImage.setAttribute('src', 'images/pic'+i+'.jpg');
+	thumbBar.appendChild(newImage);
+
+
+	newImage.onclick = function(e) {
+		var imgSource = e.target.getAttribute('src');
+		display(imgSource);
+	}
+}
+
+function display (imgSource) {
+	displayedImage.setAttribute('src', imgSource);
+}
+
+
+
 
 /* Wiring up the Darken/Lighten button */
 
